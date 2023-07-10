@@ -12,11 +12,13 @@ body {
 	max-width: 450px;
 	margin: 300px auto;
 	border-radius: 5px;
+	border: 2px solid white;
 	padding: 10px 30px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: white;
+	position: relative;
 }
 
 .inputBox input {
@@ -31,4 +33,11 @@ body {
 .inputBox img {
 	width: 30px;
 	cursor: pointer;
+}
+.inputBox p {
+	position: absolute;
+	bottom: -50%;
+	font-size: 16px;
+	color: #fff;
+	display: none;
 }
