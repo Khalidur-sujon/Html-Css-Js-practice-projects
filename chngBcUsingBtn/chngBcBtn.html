@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background just clicking a buttton</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .button {
+        margin: 1rem auto;
+    }
+</style>
+<body>
+    <div class="container" id="root">
+        <h2>Change Your Background Color</h2>
+        <button class="button">click me </button>
+    </div>
+
+    <script>
+
+        const button = document.querySelector('button');
+        const display = button.parentNode.parentNode;
+
+        button.addEventListener('click', (e) => {
+            const rgb = generateRgb();
+            display.style.backgroundColor = rgb;
+        })
+
+        function generateRgb() {
+            const red = Math.floor(Math.random() * 255)
+            const green = Math.floor(Math.random() * 255)
+            const blue = Math.floor(Math.random() * 255)
+
+            return `rgb(${red}, ${green}, ${blue})`
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.animate {
+	font-size: 60px;
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+	background-image: url("images.jpeg");
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: movebg 90s linear infinite;
+	-webkit-animation: movebg 40s linear infinite;
+}
+
+@keyframes movebg {
+	0% {
+		background-position: 0% 30%;
+	}
+	100% {
+		background-position: 80% 30%;
+	}
+}

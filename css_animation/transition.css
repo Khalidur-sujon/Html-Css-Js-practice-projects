@@ -1,0 +1,23 @@
+body {
+	background: #333;
+}
+
+.box {
+	display: inline-block;
+	background: white;
+	width: 200px;
+	height: 200px;
+	top: 100px;
+	margin: auto;
+	position: relative;
+	transition-property: all;
+
+	transition-duration: 1s, 3s;
+	transition-timing-function: ease-in-out infinite;
+}
+
+.box:hover {
+	background: red;
+	border-radius: 50%;
+	transform: rotateY(180deg);
+}

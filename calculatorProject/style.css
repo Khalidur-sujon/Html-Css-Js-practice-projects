@@ -1,0 +1,23 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+.container {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+.row {
+	padding: 6px;
+}
+
+.button {
+	padding: 6px 16px;
+}
