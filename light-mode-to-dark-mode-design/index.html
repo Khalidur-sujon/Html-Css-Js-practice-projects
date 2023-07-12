@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Light-to-Dark-mode</title>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <a href=""><img src="images/logo.png" id="logo"></a>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Hire Me</a></li>
+            </ul>
+            <img src="images/moon.png" id="moon-icon">
+        </nav>
+        <div class="info">
+            <h1>I am <span>Kate</span> Anela</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Autem temporibus at obcaecati sit,
+                voluptatum deleniti.</p>
+            <a href="">Download CV</a>
+        </div>
+        <div class="img-box">
+            <img src="images/pattern.png" id="back-icon">
+            <img src="images/girl.png" id="main-icon">
+        </div>
+
+        <div class="social-link">
+            <a><i class="fa-brands fa-linkedin"></i></a>
+            <a><i class="fa-brands fa-twitter"></i></i></a>
+            <a><i class="fa-brands fa-facebook"></i></i></a>
+        </div>
+    </div>
+
+    <script>
+        let themeIcon = document.getElementById('moon-icon');
+
+        if (localStorage.getItem('theme') == null) {
+            localStorage.setItem('theme', 'light')
+        }
+
+        let localData = localStorage.getItem('theme');
+
+        if (localData == 'light') {
+            themeIcon.src = 'images/moon.png';
+            document.body.classList.remove('dark-theme');
+        } else if (localData == 'dark') {
+            themeIcon.src = 'images/sun.png';
+            document.body.classList.add('dark-theme');
+        }
+
+        themeIcon.onclick = () => {
+            document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.src = 'images/sun.png';
+                localStorage.setItem('theme', 'dark')
+            } else {
+                themeIcon.src = 'images/moon.png';
+                localStorage.setItem('theme', 'light')
+            }
+        }
+    </script>
+</body>
+</html>
